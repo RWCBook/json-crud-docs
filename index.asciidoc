@@ -34,23 +34,15 @@ The *User* URL (+/user/+) is the base URL for reading and updating *User* object
 == Responses
 (text goes here)
 
-[[home-payload]]
-=== Home Payload
-(text goes here)
-
-[[tasklist-payload]]
-=== TaskList Payload
-(text goes here)
-
 [[task-payload]]
 === Task Payload
-A single *Task* object looks like this:
+A *Task* object looks like this:
 
 .Single Task Object
 [source, javascript]
 ----
 {
-  "task" : [
+  task : [
     {
       id: "137h96l7mpv",
       title: "LAX",
@@ -63,15 +55,30 @@ A single *Task* object looks like this:
 }
 ----
 
-*Task* objects are MUST be returned as a named array  (+task+) with a single member. The valid list of properties for a *Task* object are: +<<id>>+, +<<title>>", +<<completeFlag>>+, +<<assignedUser>>+, +<<dateCreated>>+, and +<<dataUpdated>>+. See <<data-elements, Data Elements>> for more information on each property.  
-
-[[userlist-payload]]
-=== UserList Payload
-(text goes here)
+*Task* objects MUST be returned as a named array (+task+). The array MAY have only one member. The valid list of properties for a *Task* object are: +<<id>>+, +<<title>>+, +<<completeFlag>>+, +<<assignedUser>>+, +<<dateCreated>>+, and +<<dataUpdated>>+. See <<data-elements, Data Elements>> for more information on each property.  
 
 [[user-payload]]
 === User Payload
-(text goes here)
+A *User* object looks like this:
+
+.User Object
+[source, javascript]
+----
+{
+  user: [
+    {
+    id: "alice",
+    nick: "alice",
+    password: "a1!c#",
+    name: "Alice Teddington, Sr.",
+    dateCreated: "2016-01-18T02:12:55.747Z",
+    dateUpdated: "2016-01-18T03:26:36.572Z"
+    }
+  ]
+}
+----
+
+*User* objects MUST be returned as a named array (+user+). The array MAY have only one member. The valid list of properties for a *User* object are: +<<id>>+, +<<nick>>+, +<<password>>+, +<<name>>+, +<<dateCreated>>+, and +<<dateUpdated>>+. See <<data-elements, Data Elements>> for more information on each property.
 
 [[error-payload]]
 === Error Payload
@@ -89,7 +96,7 @@ When the service encounters an error (HTTP 4xx or 5xx) the service returns an Er
 }
 ----
 
-The first element in an Error Payload MUST be an +error+ JSON object three properties. Those properties are: <<code,code>>, <<message,message>>, and <<url,url>>. See the <<data-elements, Data Elements>> section for more details.
+The first element in an Error Payload MUST be an +error+ JSON object three properties. Those properties are: +<<code>>+, +<<message>>+, and +<<url>>+. See the <<data-elements, Data Elements>> section for more details.
 
 [[data-elements]]
 == Data Elements 
@@ -106,17 +113,6 @@ Application-specific error description (see <<error-payload,Error Payload>>).
 [[url]]
 === url
 URL that was invokved that caused the error (see <<error-payload,Error Payload>>).
-
-////
-[grid="rows",format="csv"]
-[options="header",cols="<,<"]
-|===========================
-Data Element,Payloads
-+<<code>>+, +<<error-payload>>+
-+<<message>>+, +<<error-payload>>+
-+<<url>>+, +<<error-payload>>+
-|===========================
-////
 
 [[extensions]]
 == Extensions

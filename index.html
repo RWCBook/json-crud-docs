@@ -778,16 +778,8 @@ interpreted as described in <a href="http://tools.ietf.org/html/rfc2119">RFC2119
 <div class="sectionbody">
 <div class="paragraph"><p>(text goes here)</p></div>
 <div class="sect2">
-<h3 id="home-payload">Home Payload</h3>
-<div class="paragraph"><p>(text goes here)</p></div>
-</div>
-<div class="sect2">
-<h3 id="tasklist-payload">TaskList Payload</h3>
-<div class="paragraph"><p>(text goes here)</p></div>
-</div>
-<div class="sect2">
 <h3 id="task-payload">Task Payload</h3>
-<div class="paragraph"><p>A single <strong>Task</strong> object looks like this:</p></div>
+<div class="paragraph"><p>A <strong>Task</strong> object looks like this:</p></div>
 <div class="listingblock">
 <div class="title">Single Task Object</div>
 <div class="content"><!-- Generator: GNU source-highlight 2.1.2
@@ -795,7 +787,7 @@ by Lorenzo Bettini
 http://www.lorenzobettini.it
 http://www.gnu.org/software/src-highlite -->
 <pre><tt><span style="color: #FF0000">{</span>
-  <span style="color: #FF0000">"task"</span> <span style="color: #990000">:</span> <span style="color: #990000">[</span>
+  task <span style="color: #990000">:</span> <span style="color: #990000">[</span>
     <span style="color: #FF0000">{</span>
       id<span style="color: #990000">:</span> <span style="color: #FF0000">"137h96l7mpv"</span><span style="color: #990000">,</span>
       title<span style="color: #990000">:</span> <span style="color: #FF0000">"LAX"</span><span style="color: #990000">,</span>
@@ -806,15 +798,30 @@ http://www.gnu.org/software/src-highlite -->
     <span style="color: #FF0000">}</span>
   <span style="color: #990000">]</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p><strong>Task</strong> objects are MUST be returned as a named array  (<code>task</code>) with a single member. The valid list of properties for a <strong>Task</strong> object are: <code><a href="#id">[id]</a></code>, <code><a href="#title">[title]</a>", +<a href="#completeFlag">[completeFlag]</a></code>, <code><a href="#assignedUser">[assignedUser]</a></code>, <code><a href="#dateCreated">[dateCreated]</a></code>, and <code><a href="#dataUpdated">[dataUpdated]</a></code>. See <a href="#data-elements">Data Elements</a> for more information on each property.</p></div>
-</div>
-<div class="sect2">
-<h3 id="userlist-payload">UserList Payload</h3>
-<div class="paragraph"><p>(text goes here)</p></div>
+<div class="paragraph"><p><strong>Task</strong> objects MUST be returned as a named array (<code>task</code>). The array MAY have only one member. The valid list of properties for a <strong>Task</strong> object are: <code><a href="#id">[id]</a></code>, <code><a href="#title">[title]</a></code>, <code><a href="#completeFlag">[completeFlag]</a></code>, <code><a href="#assignedUser">[assignedUser]</a></code>, <code><a href="#dateCreated">[dateCreated]</a></code>, and <code><a href="#dataUpdated">[dataUpdated]</a></code>. See <a href="#data-elements">Data Elements</a> for more information on each property.</p></div>
 </div>
 <div class="sect2">
 <h3 id="user-payload">User Payload</h3>
-<div class="paragraph"><p>(text goes here)</p></div>
+<div class="paragraph"><p>A <strong>User</strong> object looks like this:</p></div>
+<div class="listingblock">
+<div class="title">User Object</div>
+<div class="content"><!-- Generator: GNU source-highlight 2.1.2
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #FF0000">{</span>
+  user<span style="color: #990000">:</span> <span style="color: #990000">[</span>
+    <span style="color: #FF0000">{</span>
+    id<span style="color: #990000">:</span> <span style="color: #FF0000">"alice"</span><span style="color: #990000">,</span>
+    nick<span style="color: #990000">:</span> <span style="color: #FF0000">"alice"</span><span style="color: #990000">,</span>
+    password<span style="color: #990000">:</span> <span style="color: #FF0000">"a1!c#"</span><span style="color: #990000">,</span>
+    name<span style="color: #990000">:</span> <span style="color: #FF0000">"Alice Teddington, Sr."</span><span style="color: #990000">,</span>
+    dateCreated<span style="color: #990000">:</span> <span style="color: #FF0000">"2016-01-18T02:12:55.747Z"</span><span style="color: #990000">,</span>
+    dateUpdated<span style="color: #990000">:</span> <span style="color: #FF0000">"2016-01-18T03:26:36.572Z"</span>
+    <span style="color: #FF0000">}</span>
+  <span style="color: #990000">]</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p><strong>User</strong> objects MUST be returned as a named array (<code>user</code>). The array MAY have only one member. The valid list of properties for a <strong>User</strong> object are: <code><a href="#id">[id]</a></code>, <code><a href="#nick">[nick]</a></code>, <code><a href="#password">[password]</a></code>, <code><a href="#name">[name]</a></code>, <code><a href="#dateCreated">[dateCreated]</a></code>, and <code><a href="#dateUpdated">[dateUpdated]</a></code>. See <a href="#data-elements">Data Elements</a> for more information on each property.</p></div>
 </div>
 <div class="sect2">
 <h3 id="error-payload">Error Payload</h3>
@@ -832,7 +839,7 @@ http://www.gnu.org/software/src-highlite -->
     url<span style="color: #990000">:</span> <span style="color: #FF0000">"http://rwcbook02.herokuapp.com/invalid-url/"</span>
   <span style="color: #FF0000">}</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p>The first element in an Error Payload MUST be an <code>error</code> JSON object three properties. Those properties are: <a href="#code">code</a>, <a href="#message">message</a>, and <a href="#url">url</a>. See the <a href="#data-elements">Data Elements</a> section for more details.</p></div>
+<div class="paragraph"><p>The first element in an Error Payload MUST be an <code>error</code> JSON object three properties. Those properties are: <code><a href="#code">[code]</a></code>, <code><a href="#message">[message]</a></code>, and <code><a href="#url">[url]</a></code>. See the <a href="#data-elements">Data Elements</a> section for more details.</p></div>
 </div>
 </div>
 </div>
@@ -880,7 +887,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-28 15:41:19 Eastern Standard Time
+Last updated 2017-01-28 15:51:20 Eastern Standard Time
 </div>
 </div>
 </body>
