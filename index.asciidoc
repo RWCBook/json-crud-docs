@@ -1,10 +1,7 @@
 = JSON-CRUD API Documentation
-
-[horizontal]
-Date :: January 2013
-Author :: http://twitter.com/mamund[Mike Amundsen], 
-Principal API Architect for http://layer7tech.com[Layer 7 Technologies]
-Status :: Version 1.0
+:author: Mike Amundsen
+:email: mca@mamund.com
+:toc:
 
 == Overview
 This documents the BigCo Task Process Service (TPS) web API.
