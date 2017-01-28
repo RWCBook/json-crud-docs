@@ -67,12 +67,12 @@ A *User* object looks like this:
 {
   user: [
     {
-    id: "alice",
-    nick: "alice",
-    password: "a1!c#",
-    name: "Alice Teddington, Sr.",
-    dateCreated: "2016-01-18T02:12:55.747Z",
-    dateUpdated: "2016-01-18T03:26:36.572Z"
+      id: "alice",
+      nick: "alice",
+      password: "a1!c#",
+      name: "Alice Teddington, Sr.",
+      dateCreated: "2016-01-18T02:12:55.747Z",
+      dateUpdated: "2016-01-18T03:26:36.572Z"
     }
   ]
 }
@@ -105,7 +105,7 @@ What follows is a list of all the possible data elements that MAY appear within 
 NOTE: This list is in alphabetical order. Note the references in each definition to learn which TPS web API payloads use each data element.
 
 [[assignedUser]]
-== assignedUser
+=== assignedUser
 Indicates the user to which this record is assigned. This value of this data element MUST match an existing +user.id+ value. See <<user-payload, User Payload>>.
  
 [[code]]
