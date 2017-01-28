@@ -5,7 +5,7 @@
 
 [[overview]]
 == Overview
-This documents the BigCo Task Process Service (TPS) web API.
+This documentation covers the BigCo Task Process Service (TPS) web API.
 
 [[rfc2119]]
 === RFC2119 Keywords
