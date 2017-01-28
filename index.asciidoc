@@ -1,0 +1,37 @@
+= JSON-CRUD API Documentation
+:author: Mike Amundsen
+:email: mca@mamund.com
+
+== Overview
+(text goes here)
+
+=== RFC2119 Keywords
+The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", 
+"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be 
+interpreted as described in link:http://tools.ietf.org/html/rfc2119[RFC2119].
+
+=== Media Type support
+All server response bodies and request bodies MUST be valid  
+link:http://tools.ietf.org/search/rfc4627[JSON Media Type] messages. 
+
+== URLs and Operations
+(text goes here)
+
+== Responses
+(text goes here)
+
+== Data Elements 
+(text goes here)
+
+== Extensibility
+This document describes the Tasks CRUD service. Any extensions to this service
+MUST not redefine or change the use/meaning of any URLs, objects (or their properties), 
+arrays, properties, etc. defined in this document. Clients that do not recognize 
+extensions to the service SHOULD ignore them.
+
+The details of designing and implementing extensions is beyond the scope of 
+this document.
+
+NOTE: It is possible that future forward-compatible modifications to this 
+specification will include new URLs, objects, arrays, properties, etc. Extension 
+designers should take care to prevent future modifications from breaking or 
