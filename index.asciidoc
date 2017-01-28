@@ -1,6 +1,10 @@
 = JSON-CRUD API Documentation
-:author: Mike Amundsen
-:email: mca@mamund.com
+
+[horizontal]
+Date :: January 2013
+Author :: http://twitter.com/mamund[Mike Amundsen], 
+Principal API Architect for http://layer7tech.com[Layer 7 Technologies]
+Status :: Version 1.0
 
 == Overview
 This documents the BigCo Task Process Service (TPS) web API.
@@ -15,7 +19,14 @@ All server response bodies and request bodies MUST be valid
 link:http://tools.ietf.org/search/rfc4627[JSON Media Type] messages. 
 
 == URLs and Operations
-(text goes here)
+Below are the URLs and the operations associated with them.
+
+[[home-url]]
+=== /
+The Home URL (+/+) is the root of the API and supports the following methods:
+
+ * +GET+ (without arguments) returns the xref:home-payload[Home Payload]
+ 
 
 == Responses
 (text goes here)
