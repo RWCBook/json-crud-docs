@@ -44,7 +44,26 @@ The *User* URL (+/user/+) is the base URL for reading and updating *User* object
 
 [[task-payload]]
 === Task Payload
-(text goes here)
+A single *Task* object looks like this:
+
+.Single Task Object
+[source, javascript]
+----
+{
+  "task" : [
+    {
+      id: "137h96l7mpv",
+      title: "LAX",
+      completeFlag: "true",
+      assignedUser: "bob",
+      dateCreated: "2016-01-14T17:48:42.083Z",
+      dateUpdated: "2016-01-26T03:39:08.266Z"
+    }
+  ]
+}
+----
+
+*Task* objects are MUST be returned as a named array  (+task+) with a single member. The valid list of properties for a *Task* object are: +<<id>>+, +<<title>>", +<<completeFlag>>+, +<<assignedUser>>+, +<<dateCreated>>+, and +<<dataUpdated>>+. See <<data-elements, Data Elements>> for more information on each property.  
 
 [[userlist-payload]]
 === UserList Payload
