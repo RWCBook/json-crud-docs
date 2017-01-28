@@ -55,7 +55,7 @@ A *Task* object looks like this:
 }
 ----
 
-*Task* objects MUST be returned as a named array (+task+). The array MAY have only one member. The valid list of properties for a *Task* object are: +<<id>>+, +<<title>>+, +<<completeFlag>>+, +<<assignedUser>>+, +<<dateCreated>>+, and +<<dataUpdated>>+. See <<data-elements, Data Elements>> for more information on each property.  
+*Task* objects MUST be returned as a named array (+task+). The array MAY have only one member. The valid list of properties for a *Task* object are: +<<id>>+, +<<title>>+, +<<completeFlag>>+, +<<assignedUser>>+, +<<dateCreated>>+, and +<<dateUpdated>>+. See <<data-elements, Data Elements>> for more information on each property.  
 
 [[user-payload]]
 === User Payload
@@ -102,17 +102,54 @@ The first element in an Error Payload MUST be an +error+ JSON object three prope
 == Data Elements 
 What follows is a list of all the possible data elements that MAY appear within a TPS web API payload. Note that these values can appear in both requests and responses.
 
+NOTE: This list is in alphabetical order. Note the references in each definition to learn which TPS web API payloads use each data element.
+
+[[assignedUser]]
+Indicates the user to which this record is assigned. This value of this data element MUST match an existing +user.id+ value. See <<user-payload, User Payload>>.
+ 
 [[code]]
 === code
-HTTP Error code (see <<error-payload,Error Payload>>).
+HTTP Error code See <<error-payload,Error Payload>>.
+
+[[completeFlag]]
+=== completeFlag
+Indicates the completion status of this record. Valid values for this data elements are: +"true"+ and +"false"+. See <<task-payload, Task Payload>>. 
+
+[[dateCreated]]
+=== dateCreated
+The date this record was created. The value of this data element MUST in the http://www.iso.org/iso/home/standards/iso8601.htm[ISO 8601] form. See <<task-payload, Task Payload>>, <<user-payload, User Payload>>.
+
+[[dateUpdated]]
+=== dateUpdated
+The date this record was last updated. The value of this data element MUST in the http://www.iso.org/iso/home/standards/iso8601.htm[ISO 8601] form. See <<task-payload, Task Payload>>, <<user-payload, User Payload>>. 
+
+[[id]]
+=== id
+The record/object identifier. See <<task-payload, Task Payload>>, <<user-payload, User Payload>>.
 
 [[message]] 
 === message
-Application-specific error description (see <<error-payload,Error Payload>>).
+Application-specific error description See <<error-payload,Error Payload>>.
+
+[[name]]
+=== name
+Name string for this record. See <<user-payload, User Payload>>.
+
+[[nick]]
+=== nick
+The nickname of the user. The value of this data element SHOULD match the value of the +user.id+ data element. See <<user-payload, User Payload>>.
+
+[[password]]
+=== password
+The password for the user account. See <<user-payload, User Payload>>.
+
+[[title]]
+=== title
+Title string for this record. See <<task-payload, Task Payload>>.
 
 [[url]]
 === url
-URL that was invokved that caused the error (see <<error-payload,Error Payload>>).
+URL that was invokved that caused the error See <<error-payload,Error Payload>>.
 
 [[extensions]]
 == Extensions

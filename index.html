@@ -798,7 +798,7 @@ http://www.gnu.org/software/src-highlite -->
     <span style="color: #FF0000">}</span>
   <span style="color: #990000">]</span>
 <span style="color: #FF0000">}</span></tt></pre></div></div>
-<div class="paragraph"><p><strong>Task</strong> objects MUST be returned as a named array (<code>task</code>). The array MAY have only one member. The valid list of properties for a <strong>Task</strong> object are: <code><a href="#id">[id]</a></code>, <code><a href="#title">[title]</a></code>, <code><a href="#completeFlag">[completeFlag]</a></code>, <code><a href="#assignedUser">[assignedUser]</a></code>, <code><a href="#dateCreated">[dateCreated]</a></code>, and <code><a href="#dataUpdated">[dataUpdated]</a></code>. See <a href="#data-elements">Data Elements</a> for more information on each property.</p></div>
+<div class="paragraph"><p><strong>Task</strong> objects MUST be returned as a named array (<code>task</code>). The array MAY have only one member. The valid list of properties for a <strong>Task</strong> object are: <code><a href="#id">[id]</a></code>, <code><a href="#title">[title]</a></code>, <code><a href="#completeFlag">[completeFlag]</a></code>, <code><a href="#assignedUser">[assignedUser]</a></code>, <code><a href="#dateCreated">[dateCreated]</a></code>, and <code><a href="#dateUpdated">[dateUpdated]</a></code>. See <a href="#data-elements">Data Elements</a> for more information on each property.</p></div>
 </div>
 <div class="sect2">
 <h3 id="user-payload">User Payload</h3>
@@ -847,17 +847,58 @@ http://www.gnu.org/software/src-highlite -->
 <h2 id="data-elements">Data Elements</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>What follows is a list of all the possible data elements that MAY appear within a TPS web API payload. Note that these values can appear in both requests and responses.</p></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">This list is in alphabetical order. Note the references in each definition to learn which TPS web API payloads use each data element.</td>
+</tr></table>
+</div>
+<div class="paragraph" id="assignedUser"><p>Indicates the user to which this record is assigned. This value of this data element MUST match an existing <code>user.id</code> value. See <a href="#user-payload">User Payload</a>.</p></div>
 <div class="sect2">
 <h3 id="code">code</h3>
-<div class="paragraph"><p>HTTP Error code (see <a href="#error-payload">Error Payload</a>).</p></div>
+<div class="paragraph"><p>HTTP Error code See <a href="#error-payload">Error Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="completeFlag">completeFlag</h3>
+<div class="paragraph"><p>Indicates the completion status of this record. Valid values for this data elements are: <code>"true"</code> and <code>"false"</code>. See <a href="#task-payload">Task Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="dateCreated">dateCreated</h3>
+<div class="paragraph"><p>The date this record was created. The value of this data element MUST in the <a href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601</a> form. See <a href="#task-payload">Task Payload</a>, <a href="#user-payload">User Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="dateUpdated">dateUpdated</h3>
+<div class="paragraph"><p>The date this record was last updated. The value of this data element MUST in the <a href="http://www.iso.org/iso/home/standards/iso8601.htm">ISO 8601</a> form. See <a href="#task-payload">Task Payload</a>, <a href="#user-payload">User Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="id">id</h3>
+<div class="paragraph"><p>The record/object identifier. See <a href="#task-payload">Task Payload</a>, <a href="#user-payload">User Payload</a>.</p></div>
 </div>
 <div class="sect2">
 <h3 id="message">message</h3>
-<div class="paragraph"><p>Application-specific error description (see <a href="#error-payload">Error Payload</a>).</p></div>
+<div class="paragraph"><p>Application-specific error description See <a href="#error-payload">Error Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="name">name</h3>
+<div class="paragraph"><p>Name string for this record. See <a href="#user-payload">User Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="nick">nick</h3>
+<div class="paragraph"><p>The nickname of the user. The value of this data element SHOULD match the value of the <code>user.id</code> data element. See <a href="#user-payload">User Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="password">password</h3>
+<div class="paragraph"><p>The password for the user account. See <a href="#user-payload">User Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="title">title</h3>
+<div class="paragraph"><p>Title string for this record. See <a href="#task-payload">Task Payload</a>.</p></div>
 </div>
 <div class="sect2">
 <h3 id="url">url</h3>
-<div class="paragraph"><p>URL that was invokved that caused the error (see <a href="#error-payload">Error Payload</a>).</p></div>
+<div class="paragraph"><p>URL that was invokved that caused the error See <a href="#error-payload">Error Payload</a>.</p></div>
 </div>
 </div>
 </div>
@@ -887,7 +928,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-28 15:51:20 Eastern Standard Time
+Last updated 2017-01-28 16:28:30 Eastern Standard Time
 </div>
 </div>
 </body>
