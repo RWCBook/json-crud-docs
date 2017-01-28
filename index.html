@@ -743,77 +743,125 @@ asciidoc.install(2);
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_overview">Overview</h2>
+<h2 id="overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>This documents the BigCo Task Process Service (TPS) web API.</p></div>
 <div class="sect2">
-<h3 id="_rfc2119_keywords">RFC2119 Keywords</h3>
+<h3 id="rfc2119">RFC2119 Keywords</h3>
 <div class="paragraph"><p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
 interpreted as described in <a href="http://tools.ietf.org/html/rfc2119">RFC2119</a>.</p></div>
 </div>
 <div class="sect2">
-<h3 id="_media_type_support">Media Type support</h3>
+<h3 id="media-type">Media Type support</h3>
 <div class="paragraph"><p>All server response bodies and request bodies MUST be valid
 <a href="http://tools.ietf.org/search/rfc4627">JSON Media Type</a> messages.</p></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_urls_and_operations">URLs and Operations</h2>
+<h2 id="operations">URLs and Operations</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>Below are the URLs and the operations associated with them.</p></div>
 <div class="sect2">
-<h3 id="home-url">/</h3>
-<div class="paragraph"><p>The Home URL (<code>/</code>) is the root of the API and supports the following methods:</p></div>
-<div class="ulist"><ul>
-<li>
-<p>
-<code>GET</code> (without arguments) returns the <a href="#home-payload">Home Payload</a>
-</p>
-</li>
-</ul></div>
+<h3 id="task-url">/task/</h3>
+<div class="paragraph"><p>The <strong>Task</strong> URL (<code>/task/</code>) is the base URL for reading and updating <strong>Task</strong> objects and supports the following operations:</p></div>
+</div>
+<div class="sect2">
+<h3 id="user-url">/user/</h3>
+<div class="paragraph"><p>The <strong>User</strong> URL (<code>/user/</code>) is the base URL for reading and updating <strong>User</strong> objects and supports the following operations:</p></div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_responses">Responses</h2>
+<h2 id="responses">Responses</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>(text goes here)</p></div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_data_elements">Data Elements</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="home-payload">Home Payload</h3>
 <div class="paragraph"><p>(text goes here)</p></div>
 </div>
+<div class="sect2">
+<h3 id="tasklist-payload">TaskList Payload</h3>
+<div class="paragraph"><p>(text goes here)</p></div>
+</div>
+<div class="sect2">
+<h3 id="task-payload">Task Payload</h3>
+<div class="paragraph"><p>(text goes here)</p></div>
+</div>
+<div class="sect2">
+<h3 id="userlist-payload">UserList Payload</h3>
+<div class="paragraph"><p>(text goes here)</p></div>
+</div>
+<div class="sect2">
+<h3 id="user-payload">User Payload</h3>
+<div class="paragraph"><p>(text goes here)</p></div>
+</div>
+<div class="sect2">
+<h3 id="error-payload">Error Payload</h3>
+<div class="paragraph"><p>When the service encounters an error (HTTP 4xx or 5xx) the service returns an Error Payload that looks like this:</p></div>
+<div class="listingblock">
+<div class="title">Error Payload</div>
+<div class="content"><!-- Generator: GNU source-highlight 2.1.2
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #FF0000">{</span>
+  error<span style="color: #990000">:</span> <span style="color: #FF0000">{</span>
+    code<span style="color: #990000">:</span> <span style="color: #993399">404</span><span style="color: #990000">,</span>
+    message<span style="color: #990000">:</span> <span style="color: #FF0000">"Not Found"</span><span style="color: #990000">,</span>
+    url<span style="color: #990000">:</span> <span style="color: #FF0000">"http://rwcbook02.herokuapp.com/invalid-url/"</span>
+  <span style="color: #FF0000">}</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
+<div class="paragraph"><p>The first element in an Error Payload MUST be an <code>error</code> JSON object three properties. Those properties are: <a href="#code">code</a>, <a href="#message">message</a>, and <a href="#url">url</a>. See the <a href="#data-elements">Data Elements</a> section for more details.</p></div>
+</div>
+</div>
 </div>
 <div class="sect1">
-<h2 id="_extensibility">Extensibility</h2>
+<h2 id="data-elements">Data Elements</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>What follows is a list of all the possible data elements that MAY appear within a TPS web API payload. Note that these values can appear in both requests and responses.</p></div>
+<div class="sect2">
+<h3 id="code">code</h3>
+<div class="paragraph"><p>HTTP Error code (see <a href="#error-payload">Error Payload</a>).</p></div>
+</div>
+<div class="sect2">
+<h3 id="message">message</h3>
+<div class="paragraph"><p>Application-specific error description (see <a href="#error-payload">Error Payload</a>).</p></div>
+</div>
+<div class="sect2">
+<h3 id="url">url</h3>
+<div class="paragraph"><p>URL that was invokved that caused the error (see <a href="#error-payload">Error Payload</a>).</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="extensions">Extensions</h2>
 <div class="sectionbody">
 <div class="paragraph"><p>This document describes the Tasks CRUD service. Any extensions to this service
 MUST not redefine or change the use/meaning of any URLs, objects (or their properties),
 arrays, properties, etc. defined in this document. Clients that do not recognize
 extensions to the service SHOULD ignore them.</p></div>
-<div class="paragraph"><p>The details of designing and implementing extensions is beyond the scope of
-this document.</p></div>
 <div class="admonitionblock">
 <table><tr>
 <td class="icon">
-<div class="title">Note</div>
+<div class="title">Warning</div>
 </td>
 <td class="content">It is possible that future forward-compatible modifications to this
-specification will include new URLs, objects, arrays, properties, etc. Extension
-designers should take care to prevent future modifications from breaking or</td>
+specification will include new elements, attributes, attribute values,
+and data types. Extension designers should take care to prevent future
+modifications from breaking or redefining those extensions.</td>
 </tr></table>
 </div>
+<div class="paragraph"><p>The details of designing and implementing extensions is beyond the scope of
+this document.</p></div>
 </div>
 </div>
 </div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-28 15:05:21 Eastern Standard Time
+Last updated 2017-01-28 15:34:23 Eastern Standard Time
 </div>
 </div>
 </body>

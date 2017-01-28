@@ -3,43 +3,115 @@
 :email: mca@mamund.com
 :toc:
 
+[[overview]]
 == Overview
 This documents the BigCo Task Process Service (TPS) web API.
 
+[[rfc2119]]
 === RFC2119 Keywords
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", 
 "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be 
 interpreted as described in link:http://tools.ietf.org/html/rfc2119[RFC2119].
 
+[[media-type]]
 === Media Type support
 All server response bodies and request bodies MUST be valid  
 link:http://tools.ietf.org/search/rfc4627[JSON Media Type] messages. 
 
+[[operations]]
 == URLs and Operations
 Below are the URLs and the operations associated with them.
 
-[[home-url]]
-=== /
-The Home URL (+/+) is the root of the API and supports the following methods:
+[[task-url]]
+=== /task/
+The *Task* URL (+/task/+) is the base URL for reading and updating *Task* objects and supports the following operations:
 
- * +GET+ (without arguments) returns the xref:home-payload[Home Payload]
- 
+[[user-url]]
+=== /user/
+The *User* URL (+/user/+) is the base URL for reading and updating *User* objects and supports the following operations:
 
+[[responses]]
 == Responses
 (text goes here)
 
-== Data Elements 
+[[home-payload]]
+=== Home Payload
 (text goes here)
 
-== Extensibility
+[[tasklist-payload]]
+=== TaskList Payload
+(text goes here)
+
+[[task-payload]]
+=== Task Payload
+(text goes here)
+
+[[userlist-payload]]
+=== UserList Payload
+(text goes here)
+
+[[user-payload]]
+=== User Payload
+(text goes here)
+
+[[error-payload]]
+=== Error Payload
+When the service encounters an error (HTTP 4xx or 5xx) the service returns an Error Payload that looks like this:
+
+.Error Payload
+[source,javascript]
+----
+{
+  error: {
+    code: 404,
+    message: "Not Found",
+    url: "http://rwcbook02.herokuapp.com/invalid-url/"
+  }
+}
+----
+
+The first element in an Error Payload MUST be an +error+ JSON object three properties. Those properties are: <<code,code>>, <<message,message>>, and <<url,url>>. See the <<data-elements, Data Elements>> section for more details.
+
+[[data-elements]]
+== Data Elements 
+What follows is a list of all the possible data elements that MAY appear within a TPS web API payload. Note that these values can appear in both requests and responses.
+
+[[code]]
+=== code
+HTTP Error code (see <<error-payload,Error Payload>>).
+
+[[message]] 
+=== message
+Application-specific error description (see <<error-payload,Error Payload>>).
+
+[[url]]
+=== url
+URL that was invokved that caused the error (see <<error-payload,Error Payload>>).
+
+////
+[grid="rows",format="csv"]
+[options="header",cols="<,<"]
+|===========================
+Data Element,Payloads
++<<code>>+, +<<error-payload>>+
++<<message>>+, +<<error-payload>>+
++<<url>>+, +<<error-payload>>+
+|===========================
+////
+
+[[extensions]]
+== Extensions
 This document describes the Tasks CRUD service. Any extensions to this service
 MUST not redefine or change the use/meaning of any URLs, objects (or their properties), 
 arrays, properties, etc. defined in this document. Clients that do not recognize 
 extensions to the service SHOULD ignore them.
 
+[WARNING]
+It is possible that future forward-compatible modifications to this 
+specification will include new elements, attributes, attribute values, 
+and data types. Extension designers should take care to prevent future 
+modifications from breaking or redefining those extensions.
+
 The details of designing and implementing extensions is beyond the scope of 
 this document.
 
-NOTE: It is possible that future forward-compatible modifications to this 
-specification will include new URLs, objects, arrays, properties, etc. Extension 
-designers should take care to prevent future modifications from breaking or 
