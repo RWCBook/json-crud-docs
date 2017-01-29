@@ -764,8 +764,159 @@ interpreted as described in <a href="http://tools.ietf.org/html/rfc2119">RFC2119
 <div class="sectionbody">
 <div class="paragraph"><p>Below are the URLs and the operations associated with them.</p></div>
 <div class="sect2">
-<h3 id="task-url">/task/</h3>
-<div class="paragraph"><p>The <strong>Task</strong> URL (<code>/task/</code>) is the base URL for reading and updating <strong>Task</strong> objects and supports the following operations:</p></div>
+<h3 id="task-url">Tasks</h3>
+<div class="paragraph"><p>The <strong>Task</strong> URL (<code>/task/</code>) is the base URL for reading and updating <strong>Task</strong> objects The table below shows all the <strong>Task</strong>-related operations, their URLs, methods, and payloads.</p></div>
+<div class="tableblock" id="complete_set_of_tps_api_end_points">
+<table rules="all"
+width="100%"
+frame="hsides"
+cellspacing="0" cellpadding="4">
+<caption class="title">Table 1. Complete set of TPS API endpoints</caption>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<thead>
+<tr>
+<th align="left" valign="top">Operation</th>
+<th align="left" valign="top">URL</th>
+<th align="left" valign="top">Method</th>
+<th align="left" valign="top">Returns </th>
+<th align="left" valign="top">Inputs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p class="table">TaskList</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskAdd</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/</code></p></td>
+<td align="left" valign="top"><p class="table"><code>POST</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code><a href="#title">[title]</a></code>,
+<code><a href="#completeFlag">[completeFlag]</a></code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskItem</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/{id}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskUpdate</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/{id}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>PUT</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code><a href="#id">[id]</a></code>,
+<code><a href="#title">[title]</a></code>, <code><a href="#completeFlag">[completeFlag]</a></code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskDelete</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/{id}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>DELETE</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskMarkComplete</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/completed/{id}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>POST</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskAssignUser</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/assign/{id}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>POST</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code><a href="#id">[id]</a></code>, <code><a href="#nick">[nick]</a></code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskFilterByTitle</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/?Title={title}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskFilterByStatus</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/?CompleteFlag={status}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table">TaskFilterByUser</p></td>
+<td align="left" valign="top"><p class="table"><code>/task/?AssignedUser={nick}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><a href="#task-payload">Task</a></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserAdd</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/</code></p></td>
+<td align="left" valign="top"><p class="table"><code>POST</code></p></td>
+<td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
+<td align="left" valign="top"><p class="table"><code>nick,
+password,
+name</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserItem</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/{nick}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><code>User</code></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserUpdate</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/{nick}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>PUT</code></p></td>
+<td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
+<td align="left" valign="top"><p class="table"><code>nick,
+name</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserChangePassword</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/changepw/{nick}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>POST</code></p></td>
+<td align="left" valign="top"><p class="table"><code>User</code></p></td>
+<td align="left" valign="top"><p class="table"><code>nick,
+oldPass,
+newPass,
+checkPass</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserFilterByNick</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/?nick={nick}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p class="table"><code>UserFilterByName</code></p></td>
+<td align="left" valign="top"><p class="table"><code>/user/?name={name}</code></p></td>
+<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
+<td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
+<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="user-url">/user/</h3>
@@ -931,7 +1082,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-28 17:18:40 EST
+Last updated 2017-01-28 18:26:21 EST
 </div>
 </div>
 </body>

@@ -23,8 +23,41 @@ link:http://tools.ietf.org/search/rfc4627[JSON Media Type] messages.
 Below are the URLs and the operations associated with them.
 
 [[task-url]]
-=== /task/
-The *Task* URL (+/task/+) is the base URL for reading and updating *Task* objects and supports the following operations:
+=== Tasks
+The *Task* URL (+/task/+) is the base URL for reading and updating *Task* objects The table below shows all the *Task*-related operations, their URLs, methods, and payloads.
+
+[[complete_set_of_tps_api_end_points]]
+.Complete set of TPS API endpoints
+[frame="topbot",options="header", grid="all", width="100%"]
+|==================================
+|Operation|URL|Method|Returns |Inputs 
+|TaskList|+/task/+|+GET+|<<task-payload,Task>>|+none+
+|TaskAdd|+/task/+|+POST+|<<task-payload,Task>>|+<<title>>+, 
++<<completeFlag>>+
+|TaskItem|+/task/\{id}+|+GET+|<<task-payload,Task>>|+none+
+|TaskUpdate|+/task/\{id}+|+PUT+|<<task-payload,Task>>|+<<id>>+, 
++<<title>>+, +<<completeFlag>>+
+|TaskDelete|+/task/\{id}+|+DELETE+|<<task-payload,Task>>|+none+
+|TaskMarkComplete|+/task/completed/\{id}+|+POST+|<<task-payload,Task>>|+none+
+|TaskAssignUser|+/task/assign/\{id}+|+POST+|<<task-payload,Task>>|+<<id>>+, +<<nick>>+
+|TaskFilterByTitle|+/task/?Title=\{title}+|+GET+|<<task-payload,Task>>|+none+
+|TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload,Task>>|+none+
+|TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload,Task>>|+none+
+|+UserList+|+/user/+|+GET+|+UserList+|+none+
+|+UserAdd+|+/user/+|+POST+|+UserList+|+nick,
+password,
+name+
+|+UserItem+|+/user/\{nick}+|+GET+|+User+|+none+
+|+UserUpdate+|+/user/\{nick}+|+PUT+|+UserList+|+nick,
+name+
+|+UserChangePassword+|+/user/changepw/\{nick}+|+POST+|+User+|+nick,
+oldPass,
+newPass,
+checkPass+
+|+UserFilterByNick+|+/user/?nick=\{nick}+|+GET+|+UserList+|+none+
+|+UserFilterByName+|+/user/?name=\{name}+|+GET+|+UserList+|+none+
+|==================================
+
 
 [[user-url]]
 === /user/
