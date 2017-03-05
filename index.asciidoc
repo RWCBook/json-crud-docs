@@ -145,7 +145,22 @@ The first element in an Error Payload MUST be an +error+ JSON object three prope
 
 [[requests]]
 == Requests
-(text goes here)
+All payloads sent from the client to the server MUST be valid link:https://tools.ietf.org/search/rfc4627[JSON Media Type] messages. The messages SHOULD be in simple name-value dictionary format based on the INPUT arguments from the <<task-operations, Task Operations>> and the <<user-operations, User Operations>> tables.
+
+For example, the <<user-operations, User Operations>> table lists four arguments for the *UserChangePassword* operation: +<<nick>>+, +<<oldPass>>+, +<<newPass>>+, and +<<checkPass>>+. When constructing a request body for this operation, it SHOULD look like this:
+
+[[changepw-request]]
+.Change Password Request Body
+[source,javascript]
+----
+{
+  "nick" : "jt",
+  "oldPass" : "p#ssW0rd",
+  "newPass" : "n#wP@ss",
+  "checkPass" : "n#wP@ss"
+}
+----
+
 
 [[data-elements]]
 == Data Elements 

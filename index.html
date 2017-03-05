@@ -1073,7 +1073,21 @@ http://www.gnu.org/software/src-highlite -->
 <div class="sect1">
 <h2 id="requests">Requests</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>(text goes here)</p></div>
+<div class="paragraph"><p>All payloads sent from the client to the server MUST be valid <a href="https://tools.ietf.org/search/rfc4627">JSON Media Type</a> messages. The messages SHOULD be in simple name-value dictionary format based on the INPUT arguments from the <a href="#task-operations">Task Operations</a> and the <a href="#user-operations">User Operations</a> tables.</p></div>
+<div class="paragraph"><p>For example, the <a href="#user-operations">User Operations</a> table lists four arguments for the <strong>UserChangePassword</strong> operation: <code><a href="#nick">[nick]</a></code>, <code><a href="#oldPass">[oldPass]</a></code>, <code><a href="#newPass">[newPass]</a></code>, and <code><a href="#checkPass">[checkPass]</a></code>. When constructing a request body for this operation, it SHOULD look like this:</p></div>
+<div class="listingblock">
+<a id="changepw-request"></a>
+<div class="title">Change Password Request Body</div>
+<div class="content"><!-- Generator: GNU source-highlight 3.1.6
+by Lorenzo Bettini
+http://www.lorenzobettini.it
+http://www.gnu.org/software/src-highlite -->
+<pre><tt><span style="color: #FF0000">{</span>
+  <span style="color: #FF0000">"nick"</span> <span style="color: #990000">:</span> <span style="color: #FF0000">"jt"</span><span style="color: #990000">,</span>
+  <span style="color: #FF0000">"oldPass"</span> <span style="color: #990000">:</span> <span style="color: #FF0000">"p#ssW0rd"</span><span style="color: #990000">,</span>
+  <span style="color: #FF0000">"newPass"</span> <span style="color: #990000">:</span> <span style="color: #FF0000">"n#wP@ss"</span><span style="color: #990000">,</span>
+  <span style="color: #FF0000">"checkPass"</span> <span style="color: #990000">:</span> <span style="color: #FF0000">"n#wP@ss"</span>
+<span style="color: #FF0000">}</span></tt></pre></div></div>
 </div>
 </div>
 <div class="sect1">
@@ -1176,7 +1190,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-03-05 00:16:45 EST
+Last updated 2017-03-05 00:32:43 EST
 </div>
 </div>
 </body>
