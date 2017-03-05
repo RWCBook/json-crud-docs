@@ -53,6 +53,7 @@ The *User* URL (+/user/+) is the base URL for reading and updating *User* object
 .User Operations
 [frame="topbot",options="header",grid="all",width="100%"]
 |=================================
+|Operation|URL|Method|Returns|Inputs
 |UserList|+/user/+|+GET+|<<user-payload, User Payload>>|+none+
 |UserAdd|+/user/+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<password>>+,
