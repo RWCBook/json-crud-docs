@@ -44,18 +44,18 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 |TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload,Task>>|+none+
 |TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload,Task>>|+none+
 |UserList|+/user/+|+GET+|<<user-payload, User Payload>>|+none+
-|+UserAdd+|+/user/+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
+|UserAdd|+/user/+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<password>>+,
 +<<name>>+
-|+UserItem+|+/user/\{nick}+|+GET+|<<user-payload, User Payload>>|+none+
-|+UserUpdate+|+/user/\{nick}+|+PUT+|<<user-payload, User Payload>>|+<<nick>>+,
+|UserItem|+/user/\{nick}+|+GET+|<<user-payload, User Payload>>|+none+
+|UserUpdate|+/user/\{nick}+|+PUT+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<name>>+
-|+UserChangePassword+|+/user/changepw/\{nick}+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
+|UserChangePassword|+/user/changepw/\{nick}+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<oldPass>>+,
 +<<newPass>>+,
 +<<checkPass>>+
-|+UserFilterByNick+|+/user/?nick=\{nick}+|+GET+|<<user-payload, User Payload>>|+none+
-|+UserFilterByName+|+/user/?name=\{name}+|+GET+|<<user-payload, User Payload>>|+none+
+|UserFilterByNick|+/user/?nick=\{nick}+|+GET+|<<user-payload, User Payload>>|+none+
+|UserFilterByName|+/user/?name=\{name}+|+GET+|<<user-payload, User Payload>>|+none+
 |==================================
 
 
@@ -157,7 +157,7 @@ Check value to use when changing the +<<oldPass>>+ to +<<newPass>>+. The value o
  
 [[code]]
 === code
-HTTP Error code See <<error-payload,Error Payload>>.
+HTTP Error code. See <<error-payload,Error Payload>>.
 
 [[completeFlag]]
 === completeFlag
@@ -177,7 +177,7 @@ The record/object identifier. See <<task-payload, Task Payload>>, <<user-payload
 
 [[message]] 
 === message
-Application-specific error description See <<error-payload,Error Payload>>.
+Application-specific error description. See <<error-payload,Error Payload>>.
 
 [[name]]
 === name
@@ -205,7 +205,7 @@ Title string for this record. See <<task-payload, Task Payload>>.
 
 [[url]]
 === url
-URL that was invokved that caused the error See <<error-payload,Error Payload>>.
+URL that was invokved that caused the error. See <<error-payload,Error Payload>>.
 
 [[extensions]]
 == Extensions
