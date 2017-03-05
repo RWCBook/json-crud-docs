@@ -43,7 +43,7 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 |TaskFilterByTitle|+/task/?Title=\{title}+|+GET+|<<task-payload,Task>>|+none+
 |TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload,Task>>|+none+
 |TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload,Task>>|+none+
-|<<user-payload, User Payload>>|+/user/+|+GET+|+UserList+|+none+
+|UserList|+/user/+|+GET+|<<user-payload, User Payload>>|+none+
 |+UserAdd+|+/user/+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<password>>+,
 +<<name>>+
