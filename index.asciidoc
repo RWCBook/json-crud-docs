@@ -226,6 +226,6 @@ specification will include new elements, attributes, attribute values,
 and data types. Extension designers should take care to prevent future 
 modifications from breaking or redefining those extensions.
 
-The details of designing and implementing extensions is beyond the scope of 
+The details of designing and implementing compatible extensions is beyond the scope of 
 this document.
 
