@@ -155,7 +155,7 @@ NOTE: This list is in alphabetical order. Note the references in each definition
 
 [[assignedUser]]
 === assignedUser
-Indicates the user to which this record is assigned. This value of this data element MUST match an existing +user.id+ value. See <<user-payload, User Payload>>.
+Indicates the user to which this record is assigned. This value of this data element MUST match an existing <<user-payload, User>> +<<id>>+ value. See <<user-payload, User Payload>>.
 
 [[checkPass]]
 === checkPass
@@ -195,7 +195,7 @@ The new password for the user account. Used to change the +<<oldPass>>+ to a new
 
 [[nick]]
 === nick
-The nickname of the user. The value of this data element SHOULD match the value of the +user.id+ data element. See <<user-payload, User Payload>>.
+The nickname of the user. The value of this data element SHOULD match the value of the <<user-payload, User>> +<<id>>+ data element. See <<user-payload, User Payload>>.
 
 [[oldPass]]
 === oldPass
