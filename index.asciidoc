@@ -46,14 +46,14 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 |+UserList+|+/user/+|+GET+|+UserList+|+none+
 |+UserAdd+|+/user/+|+POST+|+UserList+|+<<nick>>+,
 +<<password>>+,
-+<<name>>++
++<<name>>+
 |+UserItem+|+/user/\{nick}+|+GET+|+User+|+none+
 |+UserUpdate+|+/user/\{nick}+|+PUT+|+UserList+|+<<nick>>+,
 +<<name>>+
 |+UserChangePassword+|+/user/changepw/\{nick}+|+POST+|+User+|+<<nick>>+,
 +<<oldPass>>+,
 +<<newPass>>+,
-+<<checkPass>>++
++<<checkPass>>+
 |+UserFilterByNick+|+/user/?nick=\{nick}+|+GET+|+UserList+|+none+
 |+UserFilterByName+|+/user/?name=\{name}+|+GET+|+UserList+|+none+
 |==================================
