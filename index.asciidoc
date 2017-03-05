@@ -44,16 +44,16 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 |TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload,Task>>|+none+
 |TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload,Task>>|+none+
 |+UserList+|+/user/+|+GET+|+UserList+|+none+
-|+UserAdd+|+/user/+|+POST+|+UserList+|+nick,
-password,
-name+
+|+UserAdd+|+/user/+|+POST+|+UserList+|+<<nick>>+,
++<<password>>+,
++<<name>>++
 |+UserItem+|+/user/\{nick}+|+GET+|+User+|+none+
-|+UserUpdate+|+/user/\{nick}+|+PUT+|+UserList+|+nick,
-name+
-|+UserChangePassword+|+/user/changepw/\{nick}+|+POST+|+User+|+nick,
-oldPass,
-newPass,
-checkPass+
+|+UserUpdate+|+/user/\{nick}+|+PUT+|+UserList+|+<<nick>>+,
++<<name>>+
+|+UserChangePassword+|+/user/changepw/\{nick}+|+POST+|+User+|+<<nick>>+,
++<<oldPass>>+,
++<<newPass>>+,
++<<checkPass>>++
 |+UserFilterByNick+|+/user/?nick=\{nick}+|+GET+|+UserList+|+none+
 |+UserFilterByName+|+/user/?name=\{name}+|+GET+|+UserList+|+none+
 |==================================
@@ -140,6 +140,10 @@ NOTE: This list is in alphabetical order. Note the references in each definition
 [[assignedUser]]
 === assignedUser
 Indicates the user to which this record is assigned. This value of this data element MUST match an existing +user.id+ value. See <<user-payload, User Payload>>.
+
+[[checkPass]]
+=== checkPass
+Check value to use when changing the +<<oldPass>>+ to +<<newPass>>+. The value of +<<checkPass>>+ MUST exactly match the value of +<<newPass>>+.
  
 [[code]]
 === code
@@ -169,9 +173,17 @@ Application-specific error description See <<error-payload,Error Payload>>.
 === name
 Name string for this record. See <<user-payload, User Payload>>.
 
+[[newPass]]
+=== newPass
+The new password for the user account. Used to change the +<<oldPass>>+ to a new value.
+
 [[nick]]
 === nick
 The nickname of the user. The value of this data element SHOULD match the value of the +user.id+ data element. See <<user-payload, User Payload>>.
+
+[[oldPass]]
+=== oldPass
+The existing password for the user account. Used to change the existing password to +<<newPass>>+.
 
 [[password]]
 === password

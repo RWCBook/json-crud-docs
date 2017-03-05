@@ -905,9 +905,9 @@ cellspacing="0" cellpadding="4">
 <td align="left" valign="top"><p class="table"><code>/user/</code></p></td>
 <td align="left" valign="top"><p class="table"><code>POST</code></p></td>
 <td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
-<td align="left" valign="top"><p class="table"><code>nick,
-password,
-name</code></p></td>
+<td align="left" valign="top"><p class="table"><code><a href="#nick">[nick]</a></code>,
+<code><a href="#password">[password]</a></code>,
+<code><a href="#name">[name]</a></code>+</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table"><code>UserItem</code></p></td>
@@ -921,18 +921,18 @@ name</code></p></td>
 <td align="left" valign="top"><p class="table"><code>/user/{nick}</code></p></td>
 <td align="left" valign="top"><p class="table"><code>PUT</code></p></td>
 <td align="left" valign="top"><p class="table"><code>UserList</code></p></td>
-<td align="left" valign="top"><p class="table"><code>nick,
-name</code></p></td>
+<td align="left" valign="top"><p class="table"><code><a href="#nick">[nick]</a></code>,
+<code><a href="#name">[name]</a></code></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table"><code>UserChangePassword</code></p></td>
 <td align="left" valign="top"><p class="table"><code>/user/changepw/{nick}</code></p></td>
 <td align="left" valign="top"><p class="table"><code>POST</code></p></td>
 <td align="left" valign="top"><p class="table"><code>User</code></p></td>
-<td align="left" valign="top"><p class="table"><code>nick,
-oldPass,
-newPass,
-checkPass</code></p></td>
+<td align="left" valign="top"><p class="table"><code><a href="#nick">[nick]</a></code>,
+<code><a href="#oldPass">[oldPass]</a></code>,
+<code><a href="#newPass">[newPass]</a></code>,
+<code><a href="#checkPass">[checkPass]</a></code>+</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p class="table"><code>UserFilterByNick</code></p></td>
@@ -1045,6 +1045,10 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Indicates the user to which this record is assigned. This value of this data element MUST match an existing <code>user.id</code> value. See <a href="#user-payload">User Payload</a>.</p></div>
 </div>
 <div class="sect2">
+<h3 id="checkPass">checkPass</h3>
+<div class="paragraph"><p>Check value to use when changing the <code><a href="#oldPass">[oldPass]</a></code> to <code><a href="#newPass">[newPass]</a></code>. The value of <code><a href="#checkPass">[checkPass]</a></code> MUST exactly match the value of <code><a href="#newPass">[newPass]</a></code>.</p></div>
+</div>
+<div class="sect2">
 <h3 id="code">code</h3>
 <div class="paragraph"><p>HTTP Error code See <a href="#error-payload">Error Payload</a>.</p></div>
 </div>
@@ -1073,8 +1077,16 @@ http://www.gnu.org/software/src-highlite -->
 <div class="paragraph"><p>Name string for this record. See <a href="#user-payload">User Payload</a>.</p></div>
 </div>
 <div class="sect2">
+<h3 id="newPass">newPass</h3>
+<div class="paragraph"><p>The new password for the user account. Used to change the <code><a href="#oldPass">[oldPass]</a></code> to a new value.</p></div>
+</div>
+<div class="sect2">
 <h3 id="nick">nick</h3>
 <div class="paragraph"><p>The nickname of the user. The value of this data element SHOULD match the value of the <code>user.id</code> data element. See <a href="#user-payload">User Payload</a>.</p></div>
+</div>
+<div class="sect2">
+<h3 id="oldPass">oldPass</h3>
+<div class="paragraph"><p>The existing password for the user account. Used to change the existing password to <code><a href="#newPass">[newPass]</a></code>.</p></div>
 </div>
 <div class="sect2">
 <h3 id="password">password</h3>
@@ -1116,7 +1128,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-03-04 22:52:27 EST
+Last updated 2017-03-04 23:02:34 EST
 </div>
 </div>
 </body>
