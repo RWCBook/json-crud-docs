@@ -28,7 +28,7 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 
 [[task-operations]]
 .Task Operations
-[frame="topbot",options="header", grid="all", width="100%"]
+[frame="topbot",cols="2,3,2,2,10",options="header", grid="all", width="100%"]
 |==================================
 |Operation|URL|Method|Returns |Inputs 
 |TaskList|+/task/+|+GET+|<<task-payload, Task Payload>>|+none+
