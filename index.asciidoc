@@ -87,14 +87,14 @@ A *Task* object looks like this:
 [source, javascript]
 ----
 {
-  task : [
+  "task" : [
     {
-      id: "137h96l7mpv",
-      title: "LAX",
-      completeFlag: "true",
-      assignedUser: "bob",
-      dateCreated: "2016-01-14T17:48:42.083Z",
-      dateUpdated: "2016-01-26T03:39:08.266Z"
+      "id" : "137h96l7mpv",
+      "title" : "LAX",
+      "completeFlag" : "true",
+      "assignedUser" : "bob",
+      "dateCreated" : "2016-01-14T17:48:42.083Z",
+      "dateUpdated" : "2016-01-26T03:39:08.266Z"
     }
   ]
 }
@@ -110,14 +110,14 @@ A *User* object looks like this:
 [source, javascript]
 ----
 {
-  user: [
+  "user" : [
     {
-      id: "alice",
-      nick: "alice",
-      password: "a1!c#",
-      name: "Alice Teddington, Sr.",
-      dateCreated: "2016-01-18T02:12:55.747Z",
-      dateUpdated: "2016-01-18T03:26:36.572Z"
+      "id" : "alice",
+      "nick" : "alice",
+      "password" : "a1!c#",
+      "name" : "Alice Teddington, Sr.",
+      "dateCreated" : "2016-01-18T02:12:55.747Z",
+      "dateUpdated" : "2016-01-18T03:26:36.572Z"
     }
   ]
 }
@@ -133,10 +133,10 @@ When the service encounters an error (HTTP 4xx or 5xx) the service returns an Er
 [source,javascript]
 ----
 {
-  error: {
-    code: 404,
-    message: "Not Found",
-    url: "http://rwcbook02.herokuapp.com/invalid-url/"
+  "error" : {
+    "code" : "404",
+    "message" : "Not Found",
+    "url" : "http://rwcbook02.herokuapp.com/invalid-url/"
   }
 }
 ----
