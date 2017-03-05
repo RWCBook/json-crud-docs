@@ -65,7 +65,7 @@ The *User* URL (+/user/+) is the base URL for reading and updating *User* object
 
 [[responses]]
 == Responses
-(text goes here)
+The Task API returns two payloads (as JSON object arrays): the <<task-payload, Task Payload>> and the <<user-payload, User Payload>>. See below for details.
 
 [[task-payload]]
 === Task Payload
