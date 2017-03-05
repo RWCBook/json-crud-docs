@@ -26,8 +26,8 @@ Below are the URLs and the operations associated with them.
 === Tasks
 The *Task* URL (+/task/+) is the base URL for reading and updating *Task* objects The table below shows all the *Task*-related operations, their URLs, methods, and payloads.
 
-[[complete_set_of_tps_api_end_points]]
-.Complete set of TPS API endpoints
+[[task-operations]]
+.Task Operations
 [frame="topbot",options="header", grid="all", width="100%"]
 |==================================
 |Operation|URL|Method|Returns |Inputs 
@@ -43,6 +43,16 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 |TaskFilterByTitle|+/task/?Title=\{title}+|+GET+|<<task-payload, Task Payload>>|+none+
 |TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload, Task Payload>>|+none+
 |TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload, Task Payload>>|+none+
+|=================================
+
+[[user-url]]
+=== Users
+The *User* URL (+/user/+) is the base URL for reading and updating *User* objects and supports the following operations:
+
+[[user-operations]]
+.User Operations
+[frame="topbot",options="header",grid="all",width="100%"]
+|=================================
 |UserList|+/user/+|+GET+|<<user-payload, User Payload>>|+none+
 |UserAdd|+/user/+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<password>>+,
@@ -57,11 +67,6 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 |UserFilterByNick|+/user/?nick=\{nick}+|+GET+|<<user-payload, User Payload>>|+none+
 |UserFilterByName|+/user/?name=\{name}+|+GET+|<<user-payload, User Payload>>|+none+
 |==================================
-
-
-[[user-url]]
-=== Users
-The *User* URL (+/user/+) is the base URL for reading and updating *User* objects and supports the following operations:
 
 [[responses]]
 == Responses

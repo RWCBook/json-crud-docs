@@ -800,12 +800,12 @@ interpreted as described in <a href="http://tools.ietf.org/html/rfc2119">RFC2119
 <div class="sect2">
 <h3 id="task-url">Tasks</h3>
 <div class="paragraph"><p>The <strong>Task</strong> URL (<code>/task/</code>) is the base URL for reading and updating <strong>Task</strong> objects The table below shows all the <strong>Task</strong>-related operations, their URLs, methods, and payloads.</p></div>
-<div class="tableblock" id="complete_set_of_tps_api_end_points">
+<div class="tableblock" id="task-operations">
 <table rules="all"
 width="100%"
 frame="hsides"
 cellspacing="0" cellpadding="4">
-<caption class="title">Table 1. Complete set of TPS API endpoints</caption>
+<caption class="title">Table 1. Task Operations</caption>
 <col width="20%" />
 <col width="20%" />
 <col width="20%" />
@@ -893,13 +893,34 @@ cellspacing="0" cellpadding="4">
 <td align="left" valign="top"><p class="table"><a href="#task-payload">Task Payload</a></p></td>
 <td align="left" valign="top"><p class="table"><code>none</code></p></td>
 </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-url">Users</h3>
+<div class="paragraph"><p>The <strong>User</strong> URL (<code>/user/</code>) is the base URL for reading and updating <strong>User</strong> objects and supports the following operations:</p></div>
+<div class="tableblock" id="user-operations">
+<table rules="all"
+width="100%"
+frame="hsides"
+cellspacing="0" cellpadding="4">
+<caption class="title">Table 2. User Operations</caption>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<thead>
 <tr>
-<td align="left" valign="top"><p class="table">UserList</p></td>
-<td align="left" valign="top"><p class="table"><code>/user/</code></p></td>
-<td align="left" valign="top"><p class="table"><code>GET</code></p></td>
-<td align="left" valign="top"><p class="table"><a href="#user-payload">User Payload</a></p></td>
-<td align="left" valign="top"><p class="table"><code>none</code></p></td>
+<th align="left" valign="top">UserList</th>
+<th align="left" valign="top"><code>/user/</code></th>
+<th align="left" valign="top"><code>GET</code></th>
+<th align="left" valign="top"><a href="#user-payload">User Payload</a></th>
+<th align="left" valign="top"><code>none</code></th>
 </tr>
+</thead>
+<tbody>
 <tr>
 <td align="left" valign="top"><p class="table">UserAdd</p></td>
 <td align="left" valign="top"><p class="table"><code>/user/</code></p></td>
@@ -951,10 +972,6 @@ cellspacing="0" cellpadding="4">
 </tbody>
 </table>
 </div>
-</div>
-<div class="sect2">
-<h3 id="user-url">Users</h3>
-<div class="paragraph"><p>The <strong>User</strong> URL (<code>/user/</code>) is the base URL for reading and updating <strong>User</strong> objects and supports the following operations:</p></div>
 </div>
 </div>
 </div>
@@ -1152,7 +1169,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-03-04 23:34:13 EST
+Last updated 2017-03-04 23:40:04 EST
 </div>
 </div>
 </body>
