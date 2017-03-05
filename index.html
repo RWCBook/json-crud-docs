@@ -953,7 +953,7 @@ cellspacing="0" cellpadding="4">
 </div>
 </div>
 <div class="sect2">
-<h3 id="user-url">/user/</h3>
+<h3 id="user-url">Users</h3>
 <div class="paragraph"><p>The <strong>User</strong> URL (<code>/user/</code>) is the base URL for reading and updating <strong>User</strong> objects and supports the following operations:</p></div>
 </div>
 </div>
@@ -961,7 +961,25 @@ cellspacing="0" cellpadding="4">
 <div class="sect1">
 <h2 id="responses">Responses</h2>
 <div class="sectionbody">
-<div class="paragraph"><p>The Task API returns two payloads (as JSON object arrays): the <a href="#task-payload">Task Payload</a> and the <a href="#user-payload">User Payload</a>. See below for details.</p></div>
+<div class="paragraph"><p>The Task API returns three possible payloads (as JSON object arrays):</p></div>
+<div class="olist arabic"><ol class="arabic">
+<li>
+<p>
+<a href="#task-payload">Task Payload</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#user-payload">User Payload</a>
+</p>
+</li>
+<li>
+<p>
+<a href="#error-payload">Error Payload</a>
+</p>
+</li>
+</ol></div>
+<div class="paragraph"><p>See below for details.</p></div>
 <div class="sect2">
 <h3 id="task-payload">Task Payload</h3>
 <div class="paragraph"><p>A <strong>Task</strong> object looks like this:</p></div>
@@ -1026,6 +1044,12 @@ http://www.gnu.org/software/src-highlite -->
 <span style="color: #FF0000">}</span></tt></pre></div></div>
 <div class="paragraph"><p>The first element in an Error Payload MUST be an <code>error</code> JSON object three properties. Those properties are: <code><a href="#code">[code]</a></code>, <code><a href="#message">[message]</a></code>, and <code><a href="#url">[url]</a></code>. See the <a href="#data-elements">Data Elements</a> section for more details.</p></div>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="requests">Requests</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>(text goes here)</p></div>
 </div>
 </div>
 <div class="sect1">
@@ -1128,7 +1152,7 @@ this document.</p></div>
 <div id="footnotes"><hr /></div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-03-04 23:10:57 EST
+Last updated 2017-03-04 23:19:03 EST
 </div>
 </div>
 </body>

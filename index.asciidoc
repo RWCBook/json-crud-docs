@@ -60,12 +60,18 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 
 
 [[user-url]]
-=== /user/
+=== Users
 The *User* URL (+/user/+) is the base URL for reading and updating *User* objects and supports the following operations:
 
 [[responses]]
 == Responses
-The Task API returns two payloads (as JSON object arrays): the <<task-payload, Task Payload>> and the <<user-payload, User Payload>>. See below for details.
+The Task API returns three possible payloads (as JSON object arrays): 
+
+ . <<task-payload, Task Payload>> 
+ . <<user-payload, User Payload>>
+ . <<error-payload, Error Payload>>
+
+See below for details.
 
 [[task-payload]]
 === Task Payload
@@ -130,6 +136,10 @@ When the service encounters an error (HTTP 4xx or 5xx) the service returns an Er
 ----
 
 The first element in an Error Payload MUST be an +error+ JSON object three properties. Those properties are: +<<code>>+, +<<message>>+, and +<<url>>+. See the <<data-elements, Data Elements>> section for more details.
+
+[[requests]]
+== Requests
+(text goes here)
 
 [[data-elements]]
 == Data Elements 
