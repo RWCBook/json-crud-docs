@@ -31,18 +31,18 @@ The *Task* URL (+/task/+) is the base URL for reading and updating *Task* object
 [frame="topbot",options="header", grid="all", width="100%"]
 |==================================
 |Operation|URL|Method|Returns |Inputs 
-|TaskList|+/task/+|+GET+|<<task-payload,Task>>|+none+
-|TaskAdd|+/task/+|+POST+|<<task-payload,Task>>|+<<title>>+, 
+|TaskList|+/task/+|+GET+|<<task-payload, Task Payload>>|+none+
+|TaskAdd|+/task/+|+POST+|<<task-payload, Task Payload>>|+<<title>>+, 
 +<<completeFlag>>+
-|TaskItem|+/task/\{id}+|+GET+|<<task-payload,Task>>|+none+
-|TaskUpdate|+/task/\{id}+|+PUT+|<<task-payload,Task>>|+<<id>>+, 
+|TaskItem|+/task/\{id}+|+GET+|<<task-payload, Task Payload>>|+none+
+|TaskUpdate|+/task/\{id}+|+PUT+|<<task-payload, Task Payload>>|+<<id>>+, 
 +<<title>>+, +<<completeFlag>>+
-|TaskDelete|+/task/\{id}+|+DELETE+|<<task-payload,Task>>|+none+
-|TaskMarkComplete|+/task/completed/\{id}+|+POST+|<<task-payload,Task>>|+none+
-|TaskAssignUser|+/task/assign/\{id}+|+POST+|<<task-payload,Task>>|+<<id>>+, +<<nick>>+
-|TaskFilterByTitle|+/task/?Title=\{title}+|+GET+|<<task-payload,Task>>|+none+
-|TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload,Task>>|+none+
-|TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload,Task>>|+none+
+|TaskDelete|+/task/\{id}+|+DELETE+|<<task-payload, Task Payload>>|+none+
+|TaskMarkComplete|+/task/completed/\{id}+|+POST+|<<task-payload, Task Payload>>|+none+
+|TaskAssignUser|+/task/assign/\{id}+|+POST+|<<task-payload, Task Payload>>|+<<id>>+, +<<nick>>+
+|TaskFilterByTitle|+/task/?Title=\{title}+|+GET+|<<task-payload, Task Payload>>|+none+
+|TaskFilterByStatus|+/task/?CompleteFlag=\{status}+|+GET+|<<task-payload, Task Payload>>|+none+
+|TaskFilterByUser|+/task/?AssignedUser=\{nick}+|+GET+|<<task-payload, Task Payload>>|+none+
 |UserList|+/user/+|+GET+|<<user-payload, User Payload>>|+none+
 |UserAdd|+/user/+|+POST+|<<user-payload, User Payload>>|+<<nick>>+,
 +<<password>>+,
